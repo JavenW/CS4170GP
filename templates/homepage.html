@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'homepage.js') }}"></script>
+
+
+    <div class='container'>
+      <div class='row homepage_title '>
+        BeatBox​
+      </div>
+      <div class='row homepage_maintext '>
+        Learn the basic pronuncation from our website!​
+      </div>
+      <div class='row homepage_maintext '>
+        Select a sound and Start your BeatBox trip!
+      </div>
+      <div class='row'>
+
+        <div class='col-md-2'>
+
+      <a  href='/sound/Letter_B'>
+      Letter B
+      </a>
+
+        </div>
+        <div class='col-md-2'>
+          <a  href='/sound/T_sound'>
+          T sound
+          </a>
+        </div>
+        <div class='col-md-2'>
+          <a  href='/sound/K_sound'>
+          K sound
+          </a>
+        </div>
+        <div class='col-md-2'>
+          <a  href='/sound/Lip_Roll'>
+          Lip Roll
+          </a>
+        </div>
+        <div class='col-md-2'>
+          <a  href='/sound/Zipper_sound'>
+          Zipper sound
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+{% endblock %}
