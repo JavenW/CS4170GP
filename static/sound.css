@@ -1,0 +1,11 @@
+.clickable {
+    cursor: pointer;
+}
+.clickable .active{
+    background-color: deepskyblue;
+}
+
+.clickable:hover {
+    background-color: lightskyblue;
+
+}

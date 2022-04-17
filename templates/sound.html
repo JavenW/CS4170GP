@@ -1,14 +1,67 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'sound.css') }}">
+    <script>
+        let topic = {{curr_topic|tojson}};
+        console.log(topic);
 
+    </script>
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'homepage.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'sound.js') }}"></script>
+    <div class="row">
+        <div id="sidebar" class="col-3">
+            <ol class="list-group list-group-numbered">
+                <li id="letter_b" class="list-group-item d-flex justify-content-between align-items-start clickable">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Letter B</div>
+                        Content for list item
+                    </div>
+{#                    <span class="badge bg-primary rounded-pill">14</span>#}
+                </li>
+                <li id="t_sound" class="list-group-item d-flex justify-content-between align-items-start clickable">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">T Sound</div>
+                        Content for list item
+                    </div>
+{#                    <span class="badge bg-primary rounded-pill">14</span>#}
+                </li>
+                <li id="k_sound" class="list-group-item d-flex justify-content-between align-items-start clickable">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">K sound</div>
+                        Content for list item
+                    </div>
+{#                    <span class="badge bg-primary rounded-pill">14</span>#}
+                </li>
+                <li id="lip_roll" class="list-group-item d-flex justify-content-between align-items-start clickable">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Lip Roll</div>
+                        Content for list item
+                    </div>
+{#                    <span class="badge bg-primary rounded-pill">14</span>#}
+                </li>
+                <li id="zipper_sound" class="list-group-item d-flex justify-content-between align-items-start clickable">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Zipper Sound</div>
+                        Content for list item
+                    </div>
+{#                    <span class="badge bg-primary rounded-pill">14</span>#}
+                </li>
+            </ol>
+        </div>
+        <div class="col-9">
+            <iframe id="video" class="" width="560" height="315" src="" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <div>
+                <button id="prev" class="btn btn-outline-info my-2 my-sm-0">Prev</button>
+                <button id="next" class="btn btn-outline-info my-2 my-sm-0">Next</button>
+            </div>
 
+        </div>
 
-    <div class='container'>
-        sound page
     </div>
+
 
 
 
