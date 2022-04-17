@@ -1,6 +1,6 @@
 import json
 from flask import Flask, jsonify
-from flask import render_template,request
+from flask import render_template, request
 
 app = Flask(__name__)
 
@@ -42,20 +42,20 @@ drag_quizs = {
     "1": {
         "id": "1",
         "answers": ['Letter_B', 'T_sound', 'K_sound', 'Lip_Roll', 'Zipper_Sound'],
-        "sounds": {"Lip_Roll":"/static/sounds/lip_roll.mp3"}
+        "sounds": {"Lip_Roll": "/static/sounds/lip_roll.mp3"}
     },
     "2": {
         "id": "2",
         "answers": ['Letter_B', 'T_sound', 'K_sound', 'Lip_Roll', 'Zipper_Sound'],
-        "sounds": {"K_sound":"/static/sounds/k_sound.mp3", "Lip_Roll":"/static/sounds/lip_roll.mp3"}
+        "sounds": {"K_sound": "/static/sounds/k_sound.mp3", "Lip_Roll": "/static/sounds/lip_roll.mp3"}
     },
     "3": {
         "id": "3",
         "answers": ['Letter_B', 'T_sound', 'K_sound', 'Lip_Roll', 'Zipper_Sound'],
-        "sounds": { "Letter_B":"/static/sounds/letter_b_sound.mp3","Zipper_Sound":"/static/sounds/zipper.mp3", "K_sound":"/static/sounds/k_sound.mp3", "Lip_Roll":"/static/sounds/lip_roll.mp3"}
+        "sounds": {"Letter_B": "/static/sounds/letter_b_sound.mp3", "Zipper_Sound": "/static/sounds/zipper.mp3",
+                   "K_sound": "/static/sounds/k_sound.mp3", "Lip_Roll": "/static/sounds/lip_roll.mp3"}
     }
 }
-
 
 quiz_answers = {}
 
@@ -79,19 +79,18 @@ def learn(topic_id):
     return render_template('sound.html', curr_topic=curr_topic)
 
 
-
 @app.route('/quiz/<quiz_id>')
 def quiz_id(quiz_id):
     if int(quiz_id) < 4:
         print(drag_quizs)
-        return render_template('quiz_drag.html', quiz = drag_quizs[quiz_id], quiz_id = int(quiz_id))
+        return render_template('quiz_drag.html', quiz=drag_quizs[quiz_id], quiz_id=int(quiz_id))
 
     if int(quiz_id) == 4:
         correctness = check_answers()
         num_of_true = correctness.count(True)
         num_of_false = correctness.count(False)
-        return render_template('score.html', correctness = correctness, t=num_of_true, f=num_of_false, total=len(correctness))
-    
+        return render_template('score.html', correctness=correctness, t=num_of_true, f=num_of_false,
+                               total=len(correctness))
 
     return render_template('homepage.html')
 
@@ -118,11 +117,8 @@ def store_quiz_info():
     quiz_answers[str(json_data['id'])] = json_data
     print(quiz_answers)
 
-    
-
     return jsonify({})
 
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
