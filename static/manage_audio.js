@@ -11,7 +11,7 @@ function startRecording( recordButton,stopButton,preview) {
     stopButton.disabled = false;
 
 
-    if (!$("#audio-playback").hasClass("hidden")) {
+    if (!$("#audio_playback").hasClass("hidden")) {
         $(this).addClass("hidden")
     }
 
@@ -52,7 +52,7 @@ function stopRecording( recordButton,stopButton) {
     $("#stopButton").addClass("inactive");
     stopButton.disabled = true;
 
-    $("#audio-playback").removeClass("hidden");
+    $("#audio_playback").removeClass("hidden");
 
     $("#downloadContainer").removeClass("hidden");
 }
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     const recordButton = document.getElementById("recordButton");
     const stopButton = document.getElementById("stopButton");
-    const preview = document.getElementById("audio-playback");
+    const preview = document.getElementById("audio_playback");
 
 
     $(recordButton).click(function () {

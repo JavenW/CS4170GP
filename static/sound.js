@@ -3,6 +3,7 @@ let id=topic["id"]
 
 $(document).ready(function () {
     $('#video').attr("src",topic["video_url"]);
+    $('#audio_tutorial').attr("src",topic["sound_url"]);
     $('#'+topic['topic']).addClass("active");
     $('#prev').click(function (){
         let cur=parseInt(id);
