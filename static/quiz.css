@@ -1,0 +1,22 @@
+.image {
+    width: 40px;
+    opacity: 0.8;
+}
+
+.choice {
+    margin: 1rem;
+    z-index: 999;
+}
+
+.answer {
+    text-align: center;
+    margin-left: 1rem;
+    background-color: bisque;
+    padding: 4rem;
+    
+}
+
+.an-row {
+    margin-top: 12rem;
+    
+}
