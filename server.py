@@ -1,6 +1,6 @@
 import json
 from flask import Flask, jsonify
-from flask import render_template, request
+from flask import render_template, request, url_for, redirect
 
 app = Flask(__name__)
 
@@ -86,14 +86,28 @@ def quiz_id(quiz_id):
         return render_template('quiz_drag.html', quiz=drag_quizs[quiz_id], quiz_id=int(quiz_id))
 
     if int(quiz_id) == 4:
-        correctness = check_answers()
-        num_of_true = correctness.count(True)
-        num_of_false = correctness.count(False)
-        return render_template('score.html', correctness=correctness, t=num_of_true, f=num_of_false,
-                               total=len(correctness))
+        # correctness = check_answers()
+        # num_of_true = correctness.count(True)
+        # num_of_false = correctness.count(False)
+        # return render_template('score.html', correctness=correctness, t=num_of_true, f=num_of_false,
+        #                        total=len(correctness))
+        return redirect(url_for('.quizResult'))
 
     return render_template('homepage.html')
 
+
+@app.route('/quizResult')
+def quizResult():
+    correctness = check_answers()
+    num_of_true = correctness.count(True)
+    num_of_false = correctness.count(False)
+    result = []
+    for i in correctness:
+        if i == False:
+            result.append("Incorrect")
+        else:
+            result.append("Correct")
+    return render_template('score.html', correctness=result, t=num_of_true, f=num_of_false, total=len(correctness))
 
 def check_answers():
     list = []
