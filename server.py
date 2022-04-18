@@ -110,7 +110,7 @@ def quizResult():
     return render_template('score.html', correctness=result, t=num_of_true, f=num_of_false, total=len(correctness))
 
 def check_answers():
-    list = []
+    ans = []
     for id in quiz_answers:
         id = str(id)
         ori_quiz = drag_quizs[id]
@@ -119,17 +119,15 @@ def check_answers():
         for sound in ori_quiz['sounds']:
             if answer[sound] != sound:
                 correctness = False
-        list.append(correctness)
+        ans.append(correctness)
 
-    return list
+    return ans
 
 
 @app.route('/store_quiz_info', methods=['POST'])
 def store_quiz_info():
     json_data = request.get_json()
-    print(json_data)
     quiz_answers[str(json_data['id'])] = json_data
-    print(quiz_answers)
 
     return jsonify({})
 
