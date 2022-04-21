@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script>
+    let user_answers = {{user_answers|tojson}};
+    //console.log({{user_answers}})
+    let quiz_answers = {{quiz_answers|tojson}};
+    //console.log({{quiz_answers}})
+    let quiz_id = {{quiz_id|int}}
+    console.log({{quiz_id }})
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_answer.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'quiz_answer.css') }}">
+
+<div class="row">
+    <div class="col-md-12" style="text-align: center;">
+        <h4>Answer </h4>
+    </div>
+</div>
+<br><br><br>
+
+
+<div class="row" id="sound-section" style="text-align: center;">
+</div>
+
+
+<div class="row">
+
+
+  <button id="next_question">
+      Next Question!
+  </button>
+
+</div>
+
+</div>
+
+
+{% endblock %}

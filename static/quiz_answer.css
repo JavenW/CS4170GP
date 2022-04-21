@@ -1,0 +1,9 @@
+.image {
+    width: 40px;
+    opacity: 0.8;
+}
+
+.choice {
+    margin: 1rem;
+    z-index: 999;
+}

@@ -59,7 +59,6 @@ drag_quizs = {
 
 quiz_answers = {}
 
-
 # ROUTES
 
 @app.route('/')
@@ -94,6 +93,12 @@ def quiz_id(quiz_id):
         return redirect(url_for('.quizResult'))
 
     return render_template('homepage.html')
+
+@app.route('/answer/<quiz_id>')
+def answerpage(quiz_id):
+    
+    return render_template('quiz_answer.html',  user_answers=quiz_answers[quiz_id],quiz_answers=drag_quizs[quiz_id],quiz_id=int(quiz_id))
+
 
 
 @app.route('/quizResult')
