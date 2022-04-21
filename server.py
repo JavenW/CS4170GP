@@ -96,8 +96,19 @@ def quiz_id(quiz_id):
 
 @app.route('/answer/<quiz_id>')
 def answerpage(quiz_id):
-    
-    return render_template('quiz_answer.html',  user_answers=quiz_answers[quiz_id],quiz_answers=drag_quizs[quiz_id],quiz_id=int(quiz_id))
+    user_answers={}
+    ans=[]
+
+    answer= quiz_answers[quiz_id]
+
+    for s in drag_quizs[quiz_id]['sounds']:
+        for r in answer:
+            if s==answer[r]:
+                ans.append(r)
+
+    user_answers[quiz_id]=ans
+    print(user_answers)
+    return render_template('quiz_answer.html',  user_answers=user_answers,quiz_answers=drag_quizs[quiz_id],quiz_id=int(quiz_id))
 
 
 

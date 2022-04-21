@@ -47,7 +47,7 @@ function generatesound(user_answers,quiz_answers) {
         sound_col.append(quiz_answer_row)
 
         let user_answer_row=$("<div class='row'>")
-        user_answer_row.text('Your answer:'+user_answers[cur])
+        user_answer_row.text('Your answer:'+user_answers[quiz_id][cur])
         sound_col.append(user_answer_row)
 
         let review_row=$("<div class='row'>")
