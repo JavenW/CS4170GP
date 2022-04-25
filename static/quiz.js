@@ -6,29 +6,32 @@ function generatesound(quiz) {
     sounds = quiz['sounds']
 
     for (name in sounds) {
-        let choice = $("<span>")
+        let choice = $("<div class='col-md-4'>")
         choice.draggable({
             revert:"invalid"
         })
         choice.addClass("choice")
         choice.attr("data-name", name)
-
+        let div = $("<div>")
         let sound = $("<audio controls>")
         sound.attr("id","sound_" + name)
         sound.attr("src",sounds[name])
 
 
-        // let source = $("<source>")
-        // console.log(sounds[name])
+        //let source = $("<source>")
+        //console.log(sounds[name])
         // source.attr("src", sounds[name])
         // source.attr("type", "audio/mpeg")
         // sound.append(source)
 
-        // let button = $('<img>')
-        // button.addClass("image")
-        // button.attr("id","button_" + name)
-        // button.attr('src','/static/play_button.jpg')
-        choice.append(sound)
+        let button = $('<img>')
+        button.addClass("image")
+        button.attr("id","button_" + name)
+        button.attr('src','/static/play_button.jpg')
+        div.append(button)
+        div.append("<br>")
+        div.append(sound)
+        choice.append(div)
         // choice.append(button)
         $("#sound-section").append(choice)
     }
@@ -72,8 +75,9 @@ $(document).ready(function () {
     generatesound(quiz)
     generateanswers(quiz)
     init_answer_dict(answer_dict, quiz)
+
+    $( "#next" ).prop( "disabled", true );
     console.log(answer_dict)
-    $('#next').hide()
     $("#submit").click(function(e) {
         $.ajax({
             type: "POST",
@@ -83,7 +87,7 @@ $(document).ready(function () {
             data : JSON.stringify(answer_dict),
             success: function(result){
                 console.log(result)
-                $('#next').show()
+                $( "#next" ).prop( "disabled", false );
             },
             error: function(request, status, error){
                   console.log("Error");

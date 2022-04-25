@@ -47,7 +47,7 @@ $(document).ready(function () {
     generatesound(quiz);
     init_answer_dict(answer_dict, quiz);
     console.log(answer_dict)
-    $('#next').hide();
+    $( "#next" ).prop( "disabled", true );
     // let answer=$('input[type="radio"][name="name"]:checked').val();
     $("#submit").click(function(e) {
         let answer=$("#selection input[type='radio']:checked").attr('data-name');
@@ -63,7 +63,7 @@ $(document).ready(function () {
             data : JSON.stringify(answer_dict),
             success: function(result){
                 console.log(result)
-                $('#next').show()
+                $( "#next" ).prop( "disabled", false );
             },
             error: function(request, status, error){
                   console.log("Error");
