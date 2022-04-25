@@ -34,10 +34,10 @@ function generatesound(quiz) {
     }
 
 
-    $(".image").click(function () {
-        console.log($(this).attr('id').substring(6))
-        $("#sound" + $(this).attr('id').substring(6)).trigger("play")
-    });   
+    // $(".image").click(function () {
+    //     console.log($(this).attr('id').substring(6))
+    //     $("#sound" + $(this).attr('id').substring(6)).trigger("play")
+    // });
 }
 
 function generateanswers(quiz,answer_dict) {
@@ -106,6 +106,7 @@ $(document).ready(function () {
             console.log(answer_dict)
 			console.log(n)
             console.log(name)
+            init_answer_dict(answer_dict, quiz)
             answer_dict[n] = name
             console.log(answer_dict)
 			$(this).css("background-color", "lightblue")

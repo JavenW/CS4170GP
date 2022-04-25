@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <script>
+        let quiz = {{quiz|tojson}};
+        console.log(quiz);
+        let quiz_id ={{quiz_id|string}}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_selection.js') }}"></script>
+{#    <link rel="stylesheet" href="{{ url_for('static', filename = 'quiz.css') }}">#}
+
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <h4>Choose which one is Lip Roll: </h4>
+        </div>
+    </div>
+    {#<br><br><br>#}
+
+    <div id="selection"></div>
+
+
+    <div class="row">
+        <button id="submit">
+            Submit
+        </button>
+
+        <a href='/answer/{{ quiz_id }}' + id="next"> See the Answer! </a>
+
+    </div>
+
+    </div>
+
+
+{% endblock %}

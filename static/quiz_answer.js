@@ -24,21 +24,21 @@ function generatesound(user_answers,quiz_answers) {
         choice.addClass("choice")
         choice.attr("data-name", name)
 
-        let sound = $("<audio hidden>")
+        let sound = $("<audio controls>")
         sound.attr("id","sound_" + name)
+        sound.attr("src",sounds[name])
+        // let source = $("<source>")
+        // console.log(sounds[name])
+        // source.attr("src", sounds[name])
+        // source.attr("type", "audio/mpeg")
+        // sound.append(source)
 
-        let source = $("<source>")
-        console.log(sounds[name])
-        source.attr("src", sounds[name])
-        source.attr("type", "audio/mpeg")
-        sound.append(source)
-
-        let button = $('<img>')
-        button.addClass("image")
-        button.attr("id","button_" + name)
-        button.attr('src','/static/play_button.jpg')
+        // let button = $('<img>')
+        // button.addClass("image")
+        // button.attr("id","button_" + name)
+        // button.attr('src','/static/play_button.jpg')
         choice.append(sound)
-        choice.append(button)
+        // choice.append(button)
         icon_row.append(choice)
         sound_col.append(icon_row)
 
@@ -62,10 +62,10 @@ function generatesound(user_answers,quiz_answers) {
         $("#sound-section").append(sound_col)
     }
 
-    $(".image").click(function () {
-        console.log($(this).attr('id').substring(6))
-        $("#sound" + $(this).attr('id').substring(6)).trigger("play")
-    });
+    // $(".image").click(function () {
+    //     console.log($(this).attr('id').substring(6))
+    //     $("#sound" + $(this).attr('id').substring(6)).trigger("play")
+    // });
     $(".review_button").click(function () {
 
         window.location.href = window.location.origin+'/sound/'+$(this).attr('id').toString();
