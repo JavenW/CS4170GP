@@ -13,21 +13,23 @@ function generatesound(quiz) {
         choice.addClass("choice")
         choice.attr("data-name", name)
 
-        let sound = $("<audio hidden>")
+        let sound = $("<audio controls>")
         sound.attr("id","sound_" + name)
+        sound.attr("src",sounds[name])
 
-        let source = $("<source>")
-        console.log(sounds[name])
-        source.attr("src", sounds[name])
-        source.attr("type", "audio/mpeg")
-        sound.append(source)
 
-        let button = $('<img>')
-        button.addClass("image")
-        button.attr("id","button_" + name)
-        button.attr('src','/static/play_button.jpg')
+        // let source = $("<source>")
+        // console.log(sounds[name])
+        // source.attr("src", sounds[name])
+        // source.attr("type", "audio/mpeg")
+        // sound.append(source)
+
+        // let button = $('<img>')
+        // button.addClass("image")
+        // button.attr("id","button_" + name)
+        // button.attr('src','/static/play_button.jpg')
         choice.append(sound)
-        choice.append(button)
+        // choice.append(button)
         $("#sound-section").append(choice)
     }
 

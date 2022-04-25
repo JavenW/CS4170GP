@@ -59,6 +59,7 @@ drag_quizs = {
 
 quiz_answers = {}
 
+
 # ROUTES
 
 @app.route('/')
@@ -94,22 +95,23 @@ def quiz_id(quiz_id):
 
     return render_template('homepage.html')
 
+
 @app.route('/answer/<quiz_id>')
 def answerpage(quiz_id):
-    user_answers={}
-    ans=[]
+    user_answers = {}
+    ans = []
 
-    answer= quiz_answers[quiz_id]
+    answer = quiz_answers[quiz_id]
 
     for s in drag_quizs[quiz_id]['sounds']:
         for r in answer:
-            if s==answer[r]:
+            if s == answer[r]:
                 ans.append(r)
 
-    user_answers[quiz_id]=ans
+    user_answers[quiz_id] = ans
     print(user_answers)
-    return render_template('quiz_answer.html',  user_answers=user_answers,quiz_answers=drag_quizs[quiz_id],quiz_id=int(quiz_id))
-
+    return render_template('quiz_answer.html', user_answers=user_answers, quiz_answers=drag_quizs[quiz_id],
+                           quiz_id=int(quiz_id))
 
 
 @app.route('/quizResult')
@@ -119,11 +121,12 @@ def quizResult():
     num_of_false = correctness.count(False)
     result = []
     for i in correctness:
-        if i == False:
+        if not i:
             result.append("Incorrect")
         else:
             result.append("Correct")
     return render_template('score.html', correctness=result, t=num_of_true, f=num_of_false, total=len(correctness))
+
 
 def check_answers():
     ans = []
