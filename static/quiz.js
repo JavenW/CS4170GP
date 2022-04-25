@@ -106,7 +106,7 @@ $(document).ready(function () {
             console.log(answer_dict)
 			console.log(n)
             console.log(name)
-            init_answer_dict(answer_dict, quiz)
+            // init_answer_dict(answer_dict, quiz)
             answer_dict[n] = name
             console.log(answer_dict)
 			$(this).css("background-color", "lightblue")
@@ -122,6 +122,8 @@ $(document).ready(function () {
 			$(this).css("background-color", "#7393B3")
 		},
 		out: function(event, ui) {
+            let n = $(this).attr("data-name")
+            answer_dict[n]=null
 			$(this).css("background-color", "skyblue")
 		}
 	})
