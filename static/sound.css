@@ -9,3 +9,28 @@
     background-color: lightskyblue;
 
 }
+.sound_bg{
+  background-image: url('https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd42184cfd5dd1c_pattern-bg.png');
+}
+.sound-box{
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  background-color: white;
+  margin-top:100px;
+  margin-bottom: 100px;
+  padding:20px 150px 50px 150px;
+}
+.sound_title{
+  font-size: 40px;
+  padding-bottom: 30px;
+  color: #A0BCC2;
+  font-weight:bold;
+}
+.p{
+    width:150px;height:150px;
+    position: absolute;
+
+    top: 75px;
+    left: 800px;
+}

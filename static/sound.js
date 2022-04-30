@@ -2,6 +2,7 @@
 let id=topic["id"]
 
 $(document).ready(function () {
+    $('#layout_bg').addClass('sound_bg');
     $('#video').attr("src",topic["video_url"]);
     $('#audio_tutorial').attr("src",topic["sound_url"]);
     $('#'+topic['topic']).addClass("active");
