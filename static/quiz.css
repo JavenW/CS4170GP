@@ -6,6 +6,7 @@
 .choice {
     margin: 1rem;
     z-index: 999;
+    text-align: center;
 }
 
 .answer {
@@ -17,6 +18,6 @@
 }
 
 .an-row {
-    margin-top: 12rem;
+    margin-top: 6rem;
     
 }

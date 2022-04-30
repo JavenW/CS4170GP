@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 from flask import render_template, request, url_for, redirect
 
 app = Flask(__name__)
+import copy
 
 topics = {
     "1": {
@@ -54,10 +55,18 @@ drag_quizs = {
         "answers": ['Letter_B', 'T_sound', 'K_sound', 'Lip_Roll', 'Zipper_Sound'],
         "sounds": {"Letter_B": "/static/sounds/letter_b_sound.mp3", "Zipper_Sound": "/static/sounds/zipper.mp3",
                    "K_sound": "/static/sounds/k_sound.mp3", "Lip_Roll": "/static/sounds/lip_roll.mp3"}
+    },
+    "4": {
+        "id": "4",
+        "answers": "Lip_Roll",
+        "sounds": {"Letter_B": "/static/sounds/letter_b_sound.mp3", "Zipper_Sound": "/static/sounds/zipper.mp3",
+                   "K_sound": "/static/sounds/k_sound.mp3", "Lip_Roll": "/static/sounds/lip_roll.mp3"},
+        "answer_sound": {"Lip_Roll": "/static/sounds/lip_roll.mp3"}
     }
 }
 
 quiz_answers = {}
+
 
 # ROUTES
 
@@ -83,8 +92,9 @@ def quiz_id(quiz_id):
     if int(quiz_id) < 4:
         print(drag_quizs)
         return render_template('quiz_drag.html', quiz=drag_quizs[quiz_id], quiz_id=int(quiz_id))
-
     if int(quiz_id) == 4:
+        return render_template('quiz_selection.html', quiz=drag_quizs[quiz_id], quiz_id=int(quiz_id))
+    if int(quiz_id) == 5:
         # correctness = check_answers()
         # num_of_true = correctness.count(True)
         # num_of_false = correctness.count(False)
@@ -94,22 +104,32 @@ def quiz_id(quiz_id):
 
     return render_template('homepage.html')
 
+
 @app.route('/answer/<quiz_id>')
 def answerpage(quiz_id):
-    user_answers={}
-    ans=[]
+    user_answers = {}
+    ans = []
+    answer = quiz_answers[quiz_id]
+    print(answer)
+    new_json = copy.deepcopy(drag_quizs[quiz_id])
+    print(type(new_json))
+    if 'answer_sound' in new_json:
+        del new_json['sounds']
+        # print(new_json)
+        new_json["sounds"] = new_json["answer_sound"]
+        del new_json["answer_sound"]
+        ans.append(answer[drag_quizs[quiz_id]['answers']])
+    # print(new_json)
+    else:
+        for s in drag_quizs[quiz_id]['sounds']:
+            for r in answer:
+                if s == answer[r]:
+                    ans.append(r)
 
-    answer= quiz_answers[quiz_id]
-
-    for s in drag_quizs[quiz_id]['sounds']:
-        for r in answer:
-            if s==answer[r]:
-                ans.append(r)
-
-    user_answers[quiz_id]=ans
+    user_answers[quiz_id] = ans
     print(user_answers)
-    return render_template('quiz_answer.html',  user_answers=user_answers,quiz_answers=drag_quizs[quiz_id],quiz_id=int(quiz_id))
-
+    return render_template('quiz_answer.html', user_answers=user_answers, quiz_answers=new_json,
+                           quiz_id=int(quiz_id))
 
 
 @app.route('/quizResult')
@@ -119,11 +139,13 @@ def quizResult():
     num_of_false = correctness.count(False)
     result = []
     for i in correctness:
-        if i == False:
+        if not i:
             result.append("Incorrect")
         else:
             result.append("Correct")
+
     return render_template('score.html', correctness=result, t=num_of_true, f=num_of_false, total=len(correctness))
+
 
 def check_answers():
     ans = []
@@ -132,9 +154,14 @@ def check_answers():
         ori_quiz = drag_quizs[id]
         answer = quiz_answers[id]
         correctness = True
-        for sound in ori_quiz['sounds']:
-            if answer[sound] != sound:
-                correctness = False
+        if 'answer_sound' in ori_quiz:
+            for sound in ori_quiz['answer_sound']:
+                if answer[sound] != sound:
+                    correctness = False
+        else:
+            for sound in ori_quiz['sounds']:
+                if answer[sound] != sound:
+                    correctness = False
         ans.append(correctness)
 
     return ans

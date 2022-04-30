@@ -6,36 +6,41 @@ function generatesound(quiz) {
     sounds = quiz['sounds']
 
     for (name in sounds) {
-        let choice = $("<span>")
+        let choice = $("<div class='col-md-4'>")
         choice.draggable({
             revert:"invalid"
         })
         choice.addClass("choice")
         choice.attr("data-name", name)
-
-        let sound = $("<audio hidden>")
+        let div = $("<div>")
+        let sound = $("<audio controls>")
         sound.attr("id","sound_" + name)
+        sound.attr("src",sounds[name])
 
-        let source = $("<source>")
-        console.log(sounds[name])
-        source.attr("src", sounds[name])
-        source.attr("type", "audio/mpeg")
-        sound.append(source)
+
+        //let source = $("<source>")
+        //console.log(sounds[name])
+        // source.attr("src", sounds[name])
+        // source.attr("type", "audio/mpeg")
+        // sound.append(source)
 
         let button = $('<img>')
         button.addClass("image")
         button.attr("id","button_" + name)
         button.attr('src','/static/play_button.jpg')
-        choice.append(sound)
-        choice.append(button)
+        div.append(button)
+        div.append("<br>")
+        div.append(sound)
+        choice.append(div)
+        // choice.append(button)
         $("#sound-section").append(choice)
     }
 
 
-    $(".image").click(function () {
-        console.log($(this).attr('id').substring(6))
-        $("#sound" + $(this).attr('id').substring(6)).trigger("play")
-    });   
+    // $(".image").click(function () {
+    //     console.log($(this).attr('id').substring(6))
+    //     $("#sound" + $(this).attr('id').substring(6)).trigger("play")
+    // });
 }
 
 function generateanswers(quiz,answer_dict) {
@@ -70,8 +75,9 @@ $(document).ready(function () {
     generatesound(quiz)
     generateanswers(quiz)
     init_answer_dict(answer_dict, quiz)
+
+    $( "#next" ).prop( "disabled", true );
     console.log(answer_dict)
-    $('#next').hide()
     $("#submit").click(function(e) {
         $.ajax({
             type: "POST",
@@ -81,7 +87,7 @@ $(document).ready(function () {
             data : JSON.stringify(answer_dict),
             success: function(result){
                 console.log(result)
-                $('#next').show()
+                $( "#next" ).prop( "disabled", false );
             },
             error: function(request, status, error){
                   console.log("Error");
@@ -104,6 +110,7 @@ $(document).ready(function () {
             console.log(answer_dict)
 			console.log(n)
             console.log(name)
+            // init_answer_dict(answer_dict, quiz)
             answer_dict[n] = name
             console.log(answer_dict)
 			$(this).css("background-color", "lightblue")
@@ -119,6 +126,8 @@ $(document).ready(function () {
 			$(this).css("background-color", "#7393B3")
 		},
 		out: function(event, ui) {
+            let n = $(this).attr("data-name")
+            answer_dict[n]=null
 			$(this).css("background-color", "skyblue")
 		}
 	})
