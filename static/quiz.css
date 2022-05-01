@@ -11,13 +11,39 @@
 
 .answer {
     text-align: center;
-    margin-left: 1rem;
+    margin-right: 10px;
     background-color: bisque;
-    padding: 4rem;
-    
+    padding:50px 0px 50px 0px;
+
 }
 
 .an-row {
     margin-top: 6rem;
-    
+
+}
+
+.quiz-box{
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  background-color: white;
+  margin-top:100px;
+  margin-bottom: 100px;
+  padding:20px 150px 50px 150px;
+}
+.quiz_title{
+  font-size: 40px;
+  padding-bottom: 30px;
+  color: #A0BCC2;
+  font-weight:bold;
+}
+#submit{
+background-color: #A0BCC2;
+margin-top: 40px;
+margin-left: 200px;
+}
+#next{
+background-color: #A0BCC2;
+margin-top:40px;
+
 }

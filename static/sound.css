@@ -15,7 +15,7 @@
 .sound-box{
   border-radius: 5px;
   border-color: black;
-  border-width: 2px;
+  border-width: thick;
   background-color: white;
   margin-top:100px;
   margin-bottom: 100px;
