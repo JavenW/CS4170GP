@@ -1,3 +1,26 @@
-.bg{
-  background-color:#F9EBC8;
+.bg {
+    background-color: #F9EBC8;
 }
+
+.nav-style {
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #000000;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+
+}
+
+/*.brand-style {*/
+/*    display: inline-block;*/
+/*    color: #ffffff;*/
+/*    letter-spacing: 3px;*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*    background-color: #A0BCC2;*/
+/*    border-radius: 3px;*/
+/*    padding: 1px 3px 2px;*/
+
+/*}*/

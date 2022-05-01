@@ -5,7 +5,7 @@ function generatesound(quiz) {
     let selection_question=$("#selection")
 
     for (let name in sounds) {
-        let choice = $("<div>")
+        let choice = $("<div style='display: inline-block;margin: auto' class='col-md-6'>")
         let sound = $("<audio controls>")
         sound.attr("id","sound_" + name)
         sound.attr("src",sounds[name])

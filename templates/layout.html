@@ -1,50 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="icon" href="data:,">
+    <link rel="icon" href="data:,">
 
-<!-- jquery -->
-  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
 
-  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 
 
     <title>BeatBoxer</title>
-  </head>
-  <body class='bg' id='layout_bg'>
+</head>
+<body class='bg' id='layout_bg'>
 
 
+<nav class="navbar navbar-expand-lg navbar-light">
+    {#  <div class="container-fluid">#}
+    <div style="margin: auto;display: flex" class="nav-style">
+        <a class="text-white navbar-brand" href="/homepage">
+            <img src="https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd4217a50d5dd0e_hero-image07.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <span>Beatboxer</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link text-white" href="{{ url_for('learn',topic_id="1") }}">Tutorial</a>
+                <a class="nav-link text-white" href="/quiz/1">Quiz</a>
+{#                <a class="nav-link text-white " href="{{ url_for('learn',topic_id="1") }}"><span class="brand-style">Start</span></a>#}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/homepage">Beatboxer</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="{{ url_for('learn',topic_id="1") }}">Tutorial</a>
-        <a class="nav-link" href="/quiz/1">Quiz</a>
-
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
 
-    <div class="container-fluid">
-        {% block content %}
-        {% endblock %}
-    </div>
+<div class="container-fluid">
+    {% block content %}
+    {% endblock %}
+</div>
 
-  </body>
+</body>
 </html>

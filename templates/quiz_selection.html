@@ -4,36 +4,90 @@
     <script>
         let quiz = {{quiz|tojson}};
         console.log(quiz);
-        let quiz_id ={{quiz_id|string}}
+        let quiz_id =
+        {{quiz_id|string}}
     </script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_selection.js') }}"></script>
-{#    <link rel="stylesheet" href="{{ url_for('static', filename = 'quiz.css') }}">#}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'quiz.css') }}">
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd4212be4d5dd25_head%2004.svg'
+             class='p p1'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd421239fd5dd3f_head%2026.svg'
+             class='p p2'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd42152c3d5dd4f_head%2029.svg'
+             class='p p3'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd421cb5ed5dd2f_head%2027.svg'
+             class='p p4'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd4215eaad5dd4e_head%2025.svg'
+             class='p p5'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd4212df6d5dd3a_head%2024.svg'
+             class='p p6'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd421c408d5dd26_head%2011.svg'
+             class='p p7'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd421ef8dd5dd43_head%2005.svg'
+             class='p p8'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd421a1a2d5dd52_head%2002.svg'
+             class='p p9'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd4218b43d5dd4c_icon-256w.png'
+             class='p p10'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd421065fd5dd4a_head%2023.svg'
+             class='p p11'>
+    </div>
+    <div>
+        <img src='https://uploads-ssl.webflow.com/626ce13d6bd421572ad5dceb/626ce13e6bd421cb21d5dd3e_head%2012.svg'
+             class='p p12'>
+    </div>
 
-    <div class="row">
-        <div class="col-md-12" style="text-align: center;">
-            <h4>Choose which one is Lip Roll: </h4>
+    <div class='container quiz-box' >
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <h4>Choose which one is Lip Roll: </h4>
+            </div>
         </div>
+        {#<br><br><br>#}
+
+        <div id="selection" style="margin: 30px"></div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <button id="submit">
+                    Submit
+                </button>
+            </div>
+            <div class="col-md-6">
+                <a href='/answer/{{ quiz_id }}'>
+                    <button id="next">
+                        See the Answer!
+                    </button>
+
+                </a>
+            </div>
+
+        </div>
+
     </div>
-    {#<br><br><br>#}
 
-    <div id="selection"></div>
-
-
-    <div class="row">
-        <button id="submit">
-            Submit
-        </button>
-
-        <a href='/answer/{{ quiz_id }}'>
-            <button id="next">
-                See the Answer! 
-            </button> 
-           
-        </a>
-
-    </div>
-
-    </div>
 
 
 {% endblock %}

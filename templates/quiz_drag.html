@@ -1,48 +1,49 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<script>
-    let quiz = {{quiz|tojson}};
-    console.log({{quiz_id}})
-    let quiz_id = {{quiz_id|string}}
-</script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename = 'quiz.css') }}">
-<div class='container quiz-box'>
-  <div class="row quiz_title">
-    QUIZ
-  </div>
-<div class="row">
-    <div class="col-md-12" style="text-align: center;">
-        <h4>Click icon to hear sound & Drag the icon to the correct label </h4>
+    <script>
+        let quiz = {{quiz|tojson}};
+        console.log({{quiz_id}})
+        let quiz_id =
+        {{quiz_id|string}}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'quiz.css') }}">
+    <div class='container quiz-box'>
+        <div class="row quiz_title">
+            QUIZ
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <h4>Click icon to hear sound & Drag the icon to the correct label </h4>
+            </div>
+        </div>
+        <br><br><br>
+
+
+        <div class="row" id="sound-section">
+
+        </div>
+
+        <div class="row an-row" id="answer-section"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button id="submit">
+                    Submit
+                </button>
+            </div>
+            <div class="col-md-6">
+                <a href='/answer/{{ quiz_id }}'>
+                    <button id="next">
+                        See the Answer!
+                    </button>
+
+                </a>
+            </div>
+
+        </div>
     </div>
-</div>
-<br><br><br>
-
-
-<div class="row" id="sound-section">
-
-</div>
-
-<div class="row an-row" id="answer-section"></div>
-
-<div class="row">
-  <div class="col-md-6">
-    <button id="submit">
-        Submit
-    </button>
-  </div>
-  <div class="col-md-6">
-    <a href='/answer/{{quiz_id}}'>
-        <button id="next">
-            See the Answer!
-        </button>
-
-    </a>
-  </div>
-
-</div>
-</div>
 
 
 
