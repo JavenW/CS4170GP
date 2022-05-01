@@ -50,6 +50,11 @@ $(document).ready(function () {
     $( "#next" ).prop( "disabled", true );
     // let answer=$('input[type="radio"][name="name"]:checked').val();
     $("#submit").click(function(e) {
+        if ($('input:checked').length <= 0) {
+            // do something here
+            alert("you must select one answer")
+            return;
+        }
         let answer=$("#selection input[type='radio']:checked").attr('data-name');
         console.log(answer)
         // init_answer_dict(answer_dict, quiz)

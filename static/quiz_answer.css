@@ -7,3 +7,127 @@
     margin: 1rem;
     z-index: 999;
 }
+.box {
+    border-radius: 5px;
+    border-color: black;
+    border-width: 2px;
+    background-color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 20px 150px 50px 150px;
+}
+.p1 {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(15deg);
+}
+.p2 {
+    position: absolute;
+    z-index: -1;
+    top: 200px;
+    left: 40px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-10deg);
+}
+.p3 {
+    position: absolute;
+    z-index: -1;
+    top: 420px;
+    left: 15px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(30deg);
+}
+.p4 {
+    position: absolute;
+    z-index: -1;
+    top: 550px;
+    left: 200px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(30deg);
+}
+
+.p5 {
+    position: absolute;
+    z-index: -1;
+    top: 400px;
+    left: 500px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(10deg);
+}
+.p6 {
+    position: absolute;
+    z-index: -1;
+    top: 600px;
+    left: 900px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-15deg);
+}
+.p7 {
+    position: absolute;
+    z-index: -1;
+    top: 550px;
+    left: 1200px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-40deg);
+}
+.p8 {
+    position: absolute;
+    z-index: -1;
+    top: 400px;
+    left: 1300px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(45deg);
+}
+.p9 {
+    position: absolute;
+    z-index: -1;
+    top: 200px;
+    left: 1330px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(15deg);
+}
+.p10 {
+    position: absolute;
+    z-index: -1;
+    top: 50px;
+    left: 1100px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-10deg);
+}
+.p11 {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 350px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(20deg);
+}
+.p12 {
+    position: absolute;
+    z-index: -1;
+    top: 600px;
+    left: 450px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-40deg);
+}
+.answer-part{
+    margin-top: 20px;
+}
+button{
+    background-color: #A0BCC2;
+}

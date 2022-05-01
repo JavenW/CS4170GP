@@ -118,6 +118,7 @@ def answerpage(quiz_id):
         # print(new_json)
         new_json["sounds"] = new_json["answer_sound"]
         del new_json["answer_sound"]
+
         ans.append(answer[drag_quizs[quiz_id]['answers']])
     # print(new_json)
     else:

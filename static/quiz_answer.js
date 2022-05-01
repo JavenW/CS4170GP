@@ -16,8 +16,8 @@ function generatesound(user_answers,quiz_answers) {
     let cur=-1
     for (name in sounds) {
         cur++;
-        let sound_col = $("<div class='col-md-3'>")
-        let icon_row=$("<div class='row'>")
+        let sound_col = $("<div class='col-md-6 answer-part'>")
+        let icon_row=$("<div>")
 
         let choice = $("<span>")
 
@@ -42,15 +42,15 @@ function generatesound(user_answers,quiz_answers) {
         icon_row.append(choice)
         sound_col.append(icon_row)
 
-        let quiz_answer_row=$("<div class='row'>")
+        let quiz_answer_row=$("<div >")
         quiz_answer_row.text('Correct answer:'+name)
         sound_col.append(quiz_answer_row)
 
-        let user_answer_row=$("<div class='row'>")
+        let user_answer_row=$("<div>")
         user_answer_row.text('Your answer:'+user_answers[quiz_id][cur])
         sound_col.append(user_answer_row)
 
-        let review_row=$("<div class='row'>")
+        let review_row=$("<div>")
         let review_button=$("<button class='review_button'>")
         review_button.text('Review it!')
         review_button.attr('id',name2id[name])
