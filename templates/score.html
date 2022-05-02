@@ -1,13 +1,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    <script>
+        let quiz_answers = {{quiz_answers|tojson}};
+        {#console.log(quiz);#}
 
-{{correctness}}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'score.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'score.css') }}">
+
+    <div class='container quiz-box'>
+        <div class="row quiz_title">
+            QUIZ
+        </div>
+        <div id="quiz-answer">
+
+        </div>
 
 
-<div>
-    You Score is {{t}} / {{total}}
-</div>
-
+        <div>
+            You Score is {{ t }} / {{ total }}
+        </div>
+    </div>
 
 {% endblock %}

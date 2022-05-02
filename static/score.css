@@ -1,0 +1,18 @@
+.quiz_title {
+    font-size: 40px;
+    padding-bottom: 30px;
+    color: #A0BCC2;
+    font-weight: bold;
+}
+.quiz-box {
+    border-radius: 5px;
+    border-color: black;
+    border-width: 2px;
+    background-color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 20px 150px 50px 150px;
+}
+.answer{
+    padding: 20px;
+}
