@@ -21,8 +21,10 @@
     z-index: -1;
     top: 10%;
     left: 0;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+
+    height: 10%;
     transform: rotate(15deg);
 }
 .p2 {
@@ -30,8 +32,9 @@
     z-index: -1;
     top: 40%;
     left: 5%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(-10deg);
 }
 .p3 {
@@ -39,8 +42,9 @@
     z-index: -1;
     top: 70%;
     left: 1%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(30deg);
 }
 .p4 {
@@ -48,8 +52,9 @@
     z-index: -1;
     top: 85%;
     left: 15%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(30deg);
 }
 
@@ -58,8 +63,9 @@
     z-index: -1;
     top: 90%;
     left: 35%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(10deg);
 }
 .p6 {
@@ -67,8 +73,9 @@
     z-index: -1;
     top: 87%;
     left: 60%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(-15deg);
 }
 .p7 {
@@ -76,8 +83,9 @@
     z-index: -1;
     top: 80%;
     left: 85%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(-40deg);
 }
 .p8 {
@@ -85,8 +93,9 @@
     z-index: -1;
     top: 60%;
     left: 90%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(45deg);
 }
 .p9 {
@@ -94,8 +103,9 @@
     z-index: -1;
     top: 30%;
     left: 88%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(15deg);
 }
 .p10 {
@@ -103,8 +113,9 @@
     z-index: -1;
     top: 8%;
     left: 75%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(-10deg);
 }
 .p11 {
@@ -112,8 +123,10 @@
     z-index: -1;
     top: 0;
     left: 25%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+
+    height: 10%;
     transform: rotate(20deg);
 }
 .p12 {
@@ -121,8 +134,9 @@
     z-index: -1;
     top: 70%;
     left: 30%;
-    width: 150px;
-    height: 150px;
+    /*width: 150px;*/
+    /*height: 150px;*/
+    height: 10%;
     transform: rotate(-40deg);
 }
 
