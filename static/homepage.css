@@ -20,13 +20,17 @@ border-radius: 5px;
 padding:0px 10px 0px 10px;
 }
 .p{
-  width:220px;height:220px;
+
+  max-width: 12%;
+max-height: 100vh;
+width: auto;
+margin: auto;
 }
 .p1{
  position: absolute;
 
- top: 50px;
- left: 200px;
+ top: 5%;
+ left: 12%;
  -webkit-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
     -o-transform: rotate(15deg);
@@ -36,8 +40,8 @@ padding:0px 10px 0px 10px;
 .p2{
  position: absolute;
 
- top: 50px;
- right: 200px;
+ top:  5%;
+ right: 12%;
  -webkit-transform: rotate(10deg);
     -moz-transform: rotate(10deg);
     -o-transform: rotate(10deg);
@@ -47,8 +51,8 @@ padding:0px 10px 0px 10px;
 .p3{
  position: absolute;
 
- top: 500px;
- left: 180px;
+ top:  62%;
+ left: 10%;
  -webkit-transform: rotate(24deg);
     -moz-transform: rotate(24deg);
     -o-transform: rotate(24deg);
@@ -58,8 +62,8 @@ padding:0px 10px 0px 10px;
 .p4{
  position: absolute;
 
- top: 480px;
- right: 180px;
+ top: 62%;
+ right: 10%;
  -webkit-transform: rotate(-20deg);
     -moz-transform: rotate(-20deg);
     -o-transform: rotate(-20deg);
@@ -69,8 +73,8 @@ padding:0px 10px 0px 10px;
 .p5{
  position: absolute;
 z-index: -1;
- top: 660px;
-left: 750px;
+ top: 80%;
+left: 45%;
  -webkit-transform: rotate(-8deg);
     -moz-transform: rotate(-8deg);
     -o-transform: rotate(-8deg);
@@ -80,8 +84,8 @@ left: 750px;
 .p6{
  position: absolute;
 z-index: -1;
- top: 750px;
-left: 100px;
+ top: 95%;
+left: 5%;
  -webkit-transform: rotate(-28deg);
     -moz-transform: rotate(-28deg);
     -o-transform: rotate(-28deg);
@@ -91,8 +95,8 @@ left: 100px;
 .p7{
  position: absolute;
 z-index: -1;
- top: 750px;
-right: 100px;
+ top: 95%;
+right: 5%;
  -webkit-transform: rotate(28deg);
     -moz-transform: rotate(28deg);
     -o-transform: rotate(28deg);
