@@ -139,13 +139,14 @@ def quizResult():
     num_of_true = correctness.count(True)
     num_of_false = correctness.count(False)
     result = []
+    print(quiz_answers)
     for i in correctness:
         if not i:
             result.append("Incorrect")
         else:
             result.append("Correct")
 
-    return render_template('score.html', correctness=result, t=num_of_true, f=num_of_false, total=len(correctness))
+    return render_template('score.html', correctness=result, t=num_of_true, f=num_of_false, total=len(correctness),quiz_answers=quiz_answers)
 
 
 def check_answers():

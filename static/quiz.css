@@ -54,8 +54,8 @@
 .p1 {
     position: absolute;
     z-index: -1;
-    top: 10px;
-    left: 20px;
+    top: 10%;
+    left: 0;
     width: 150px;
     height: 150px;
     transform: rotate(15deg);
@@ -63,8 +63,8 @@
 .p2 {
     position: absolute;
     z-index: -1;
-    top: 200px;
-    left: 40px;
+    top: 40%;
+    left: 5%;
     width: 150px;
     height: 150px;
     transform: rotate(-10deg);
@@ -72,8 +72,8 @@
 .p3 {
     position: absolute;
     z-index: -1;
-    top: 420px;
-    left: 15px;
+    top: 70%;
+    left: 1%;
     width: 150px;
     height: 150px;
     transform: rotate(30deg);
@@ -81,8 +81,8 @@
 .p4 {
     position: absolute;
     z-index: -1;
-    top: 550px;
-    left: 200px;
+    top: 85%;
+    left: 15%;
     width: 150px;
     height: 150px;
     transform: rotate(30deg);
@@ -91,8 +91,8 @@
 .p5 {
     position: absolute;
     z-index: -1;
-    top: 400px;
-    left: 500px;
+    top: 90%;
+    left: 35%;
     width: 150px;
     height: 150px;
     transform: rotate(10deg);
@@ -100,8 +100,8 @@
 .p6 {
     position: absolute;
     z-index: -1;
-    top: 600px;
-    left: 900px;
+    top: 87%;
+    left: 60%;
     width: 150px;
     height: 150px;
     transform: rotate(-15deg);
@@ -109,8 +109,8 @@
 .p7 {
     position: absolute;
     z-index: -1;
-    top: 550px;
-    left: 1200px;
+    top: 80%;
+    left: 85%;
     width: 150px;
     height: 150px;
     transform: rotate(-40deg);
@@ -118,8 +118,8 @@
 .p8 {
     position: absolute;
     z-index: -1;
-    top: 400px;
-    left: 1300px;
+    top: 60%;
+    left: 90%;
     width: 150px;
     height: 150px;
     transform: rotate(45deg);
@@ -127,8 +127,8 @@
 .p9 {
     position: absolute;
     z-index: -1;
-    top: 200px;
-    left: 1330px;
+    top: 30%;
+    left: 88%;
     width: 150px;
     height: 150px;
     transform: rotate(15deg);
@@ -136,8 +136,8 @@
 .p10 {
     position: absolute;
     z-index: -1;
-    top: 50px;
-    left: 1100px;
+    top: 8%;
+    left: 75%;
     width: 150px;
     height: 150px;
     transform: rotate(-10deg);
@@ -146,7 +146,7 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 350px;
+    left: 25%;
     width: 150px;
     height: 150px;
     transform: rotate(20deg);
@@ -154,8 +154,8 @@
 .p12 {
     position: absolute;
     z-index: -1;
-    top: 600px;
-    left: 450px;
+    top: 70%;
+    left: 30%;
     width: 150px;
     height: 150px;
     transform: rotate(-40deg);
