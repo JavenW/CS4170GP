@@ -12,7 +12,8 @@
 .answer {
     text-align: center;
     margin-right: 10px;
-    background-color: bisque;
+
+    background-color: #A0BCC2;
     padding: 50px 0px 50px 0px;
 
 }
@@ -40,13 +41,13 @@
 }
 
 #submit {
-    background-color: #A0BCC2;
+    background-color: bisque;
     margin-top: 40px;
     margin-left: 200px;
 }
 
 #next {
-    background-color: #A0BCC2;
+    background-color: bisque;
     margin-top: 40px;
 
 }
@@ -174,5 +175,3 @@
     width: 10%;
     transform: rotate(-40deg);
 }
-
-
