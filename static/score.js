@@ -12,8 +12,8 @@ function generateresult(quiz_answers) {
                 continue;
             }
             else{
-                user.append("<span>"+quiz[item]+", </span>");
-                answers.append("<span>"+item+", </span>")
+                user.append("<span>"+item+", </span>");
+                answers.append("<span>"+quiz[item]+", </span>")
                 // console.log(quiz[item])
             }
         }
