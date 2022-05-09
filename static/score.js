@@ -8,7 +8,7 @@ function generateresult(quiz_answers) {
         let quiz=quiz_answers[id];
         for (let item in quiz){
             // answers.push(item);
-            if(item==='id'){
+            if(item==='id'||quiz[item]==null){
                 continue;
             }
             else{
