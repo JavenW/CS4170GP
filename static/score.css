@@ -12,6 +12,7 @@
     margin-top: 100px;
     margin-bottom: 100px;
     padding: 20px 150px 50px 150px;
+    position: relative;
 }
 .answer{
     padding: 20px;
@@ -111,7 +112,7 @@
 .p10 {
     position: absolute;
     z-index: -1;
-    top: 8%;
+    top: 2%;
     left: 75%;
     /*width: 150px;*/
     /*height: 150px;*/
@@ -138,4 +139,22 @@
     /*height: 150px;*/
     width: 10%;
     transform: rotate(-40deg);
+}
+
+.score {
+    position: absolute;
+    z-index: 999;
+    top:80px;
+    right: 0px;
+    -webkit-transform: rotate(45deg);
+    font-size: 60px;
+}
+
+.point {
+    color: #A0BCC2;
+}
+
+.quizBtn {
+    margin-top: 20px;
+    background-color: bisque;
 }
